@@ -10,6 +10,7 @@ const App = () => {
         .then(res => res.json())
         .then(data => console.log(data))
     })
+    if(!isLoading) return <p>Loading ...</p>
   return (
     <div>
       
