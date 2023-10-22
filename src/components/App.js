@@ -8,12 +8,17 @@ const App = () => {
     useEffect(()=>{
         fetch('https://dog.ceo/api/breeds/image/random')
         .then(res => res.json())
-        .then(data => console.log(data))
-    })
+        .then(data => {
+            if(data.status === 'success') {
+                setImage(data.message)
+                setIsLoading(true)
+            }
+        })
+    },[])
     if(!isLoading) return <p>Loading ...</p>
   return (
     <div>
-      
+      <img src={image} alt='A Random Dog'></img>
     </div>
   )
 }
