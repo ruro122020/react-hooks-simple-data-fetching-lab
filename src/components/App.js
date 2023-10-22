@@ -1,7 +1,9 @@
 // create your App component here
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 const App = () => {
+    const [isLoading, setIsLoading] = useState(false)
+    const [image, setImage] = useState('')
   return (
     <div>
       
